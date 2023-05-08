@@ -1,0 +1,10 @@
+.header-mine {
+    height: 100px;
+    background-color: #06131F;
+}
+
+.container-fluid {
+    background-color: #1D2D3C;
+    height: calc(100vh - 100px);
+
+}
