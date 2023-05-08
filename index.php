@@ -23,11 +23,11 @@
         <div class="header-mine ">
             <i class="fa-brands fa-spotify fa-2xl mx-5 p-5" style="color: #60d768;"></i>
         </div>
-        <div class="container-fluid p-4">
+        <div class="container-fluid p-4 position-relative">
             <div class="container  ">
                 <div class="row row-cols-3">
-                    <div v-for="disk in dati" class="col d-flex justify-content-center">
-                        <div class="card text-center mt-3 " style="width: 15rem; height:370px; background-color: #112030; color: white; padding: 30px; cursor: pointer;">
+                    <div v-for="(disk,index) in dati" key="index" class="col d-flex justify-content-center">
+                        <div @click="showMe(index)" class="card text-center mt-3 " style="width: 15rem; height:370px; background-color: #112030; color: white; padding: 30px; cursor: pointer;">
                             <img :src=disk.poster class="card-img-top">
                             <div class="card-body">
                                 <h5 class="card-title">{{disk.title}}</h5>
@@ -39,6 +39,21 @@
                     </div>
                 </div>
             </div>
+            <div v-show="show == true" class=" mine-container-fluid position-absolute top-50 start-50 translate-middle">
+
+                <i @click="show = false" class="fa-regular fa-circle-xmark fa-shake" style="color: #06e014; cursor:pointer;"></i>
+                <div class="card my-card text-center mt-3 d-flex " style="width: 15rem; height:370px; background-color: #112030; color: white; padding: 30px; cursor: pointer;">
+                    <img :src=diskToShow.poster class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-title">{{diskToShow.title}}</h5>
+                        <p class="card-text">{{diskToShow.author}}</p>
+                        <p class="card-text">{{diskToShow.year}}</p>
+
+                    </div>
+                </div>
+
+            </div>
+
         </div>
     </div>
     <script src="js/script.js"></script>

@@ -6,5 +6,16 @@
 .container-fluid {
     background-color: #1D2D3C;
     height: calc(100vh - 100px);
+    position: relative;
 
+}
+
+.card .my-card {
+    position: absolute;
+    top: 200px;
+}
+
+.mine-container-fluid {
+    background-color: rgba(17, 32, 49, 0.507);
+    border: 1px solid black;
 }
